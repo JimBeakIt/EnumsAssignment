@@ -22,19 +22,18 @@ namespace EnumsAssignment
         {
             try
             {
-                Console.WriteLine("Enter the current day.");
-                string day1 = Console.ReadLine();
+                Console.WriteLine("Enter your favoirite day.");
 
-                DaysOfWeek day = (DaysOfWeek)Convert.ToInt32(day1);
+                DaysOfWeek today = (DaysOfWeek)Enum.Parse(typeof(DaysOfWeek), Console.ReadLine());
 
-                Console.WriteLine(day);
-
-                Console.ReadLine();
+                Console.WriteLine("Your faviorite day is "+ today);
             }
-            catch (Exception)
+            catch
             {
-                Console.WriteLine("Please enter an actual day of the week.");
-
+                Console.WriteLine("That is incorrect.");
+            }
+            finally
+            {
                 Console.ReadLine();
             }
         }
